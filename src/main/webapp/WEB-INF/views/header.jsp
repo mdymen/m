@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<c:url value="resources/assets/img/favicon.png" />" type="image/x-icon">
 
     <!--Basic Styles-->
     
@@ -33,7 +33,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
 
     <!--Beyond styles-->
-    <link id="beyond-link" href="<c:url value="resources/assets/css/beyond.min.css" />" rel="stylesheet">
+    <link href="<c:url value="resources/assets/css/beyond.min.css" />" id="beyond-link" rel="stylesheet">
     <link href="<c:url value="resources/assets/css/demo.min.css" />" rel="stylesheet">
     <link href="<c:url value="resources/assets/css/typicons.min.css" />" rel="stylesheet">
     <link href="<c:url value="resources/assets/css/animate.min.css" />" rel="stylesheet">
