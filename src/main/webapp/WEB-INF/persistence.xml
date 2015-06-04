@@ -5,6 +5,9 @@
         transaction-type="RESOURCE_LOCAL">
  
         <class>com.m.object.Usuario</class>
+        <class>com.m.object.Producto</class>
+        <class>com.m.object.Categoria</class>
+        <class>com.m.object.Venta</class>
         <properties>
  
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
