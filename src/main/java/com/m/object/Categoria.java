@@ -15,6 +15,15 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String Nombre;
+	private String Descripcion;
+	
+	public String getDescripcion() {
+		return Descripcion;
+	}
+	
+	public void setDescripcion(String descripcion) {
+		this.Descripcion = descripcion;
+	}
 	public long getId() {
 		return id;
 	}

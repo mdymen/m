@@ -25,6 +25,16 @@ public class ProductoController {
 		return "productos";
 	}
 	
+	@RequestMapping(value="/nuevo", method = RequestMethod.GET)
+	public String nuevo() {
+		return "nuevo";
+	}
+	
+	@RequestMapping(value="/agregar", method = RequestMethod.POST)
+	public String agregar(Producto producto) {
+		return "agregar";
+	}
+	
 	@RequestMapping(value="/venta", method = RequestMethod.POST)
 	public String vender(Venta venta) {
 		this.venta.vender(venta);
@@ -33,7 +43,7 @@ public class ProductoController {
 	
 	@RequestMapping(value="/quitar", method = RequestMethod.POST)
 	public String quitar(Venta venta) {
-		this.quitar(venta);
+		this.venta.quitar(venta);
 		return "productos";
 	}
 	

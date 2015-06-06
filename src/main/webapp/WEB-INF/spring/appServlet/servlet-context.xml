@@ -17,6 +17,10 @@
 
 	<beans:bean class="com.m.object.Usuario" name="Usuario"></beans:bean>
 	<beans:bean class="com.m.fachade.FUsuario" name="FUsuario"></beans:bean>
+	<beans:bean class="com.m.fachade.FProducto" name="FProducto"></beans:bean>
+	<beans:bean class="com.m.object.Producto" name="Producto"></beans:bean>
+	<beans:bean class="com.m.fachade.FVenta" name="FVenta"></beans:bean>
+	<beans:bean class="com.m.object.Venta" name="Venta"></beans:bean>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 <!-- 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->

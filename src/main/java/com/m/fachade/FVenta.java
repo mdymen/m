@@ -19,7 +19,7 @@ public class FVenta {
 	    
 	    manager.getTransaction().commit();
 		
-	}
+	} 
 
 	public void quitar(Venta venta) {
 		// TODO Auto-generated method stub
