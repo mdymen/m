@@ -1,9 +1,12 @@
 package com.m.fachade;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import com.m.object.Usuario;
 
@@ -13,9 +16,19 @@ public class FUsuario {
 	static EntityManager manager;
 	
 	public FUsuario() {
-		int i = 0;
 	}
 	
+	public List<Usuario> usuarios() {
+		manager = Manager.getManager().getInstance();
+		
+		TypedQuery<Usuario> usuario = manager.createQuery("SELECT u FROM Usuarios u", Usuario.class);
+		
+		List<Usuario> usuarios = usuario.getResultList();
+		
+		manager.close();
+		
+		return usuarios;
+	}
 	
 	public Usuario addUser(Usuario usuario) {
 /*		EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");

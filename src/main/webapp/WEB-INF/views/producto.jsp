@@ -11,7 +11,7 @@
           </div>
           <div class="widget-body">
               <div id="registration-form">
-                  <form role="form">
+                  <form action="adicionarproducto" method="post" role="form">
                       <div class="form-title">
                           Agregar producto
                       </div>
@@ -25,30 +25,27 @@
                               </div>
                           </div>
                           <div class="col-sm-6">
-                              <div class="form-group">
-                                  <span class="input-icon icon-right">
-                                      <input type="text" class="form-control" placeholder="Cantidad">
-                                      <i class="fa fa-user"></i>
-                                  </span>
+                              <div class="form-group">		
+	                                 <select class="form-control" name="usuario" data-bv-field="usuario">
+	                            		<c:forEach var="usuario" items="${usuario}">
+	                            			<option value="${usuario.getId()}">${usuario.getNombre()}</option>
+	                            		</c:forEach>	
+	                                 </select><i class="form-control-feedback" data-bv-field="usuario" style="display: none;"></i>
                               </div>
                           </div>
                       </div>
                       <div class="row">
-							<div class="col-sm-6">
-                                 <select class="form-control" name="country" data-bv-field="country">
-                                     <option value="">Select a country</option>
-                                     <option value="FR">France</option>
-                                     <option value="DE">Germany</option>
-                                     <option value="IT">Italy</option>
-                                     <option value="JP">Japan</option>
-                                     <option value="RU">Russian</option>
-                                     <option value="US">United State</option>
-                                     <option value="GB">United Kingdom</option>
-                                     <option value="other">Other</option>
-                                 </select><i class="form-control-feedback" data-bv-field="country" style="display: none;"></i>
+							<div class="col-sm-6">				
+								<div class="form-group">			
+	                                 <select class="form-control" name="country" data-bv-field="country">
+	                            		<c:forEach var="categoria" items="${categoria}">
+	                            			<option value="${categoria.getId()}">${categoria.getNombre()}</option>
+	                            		</c:forEach>	
+	                                 </select><i class="form-control-feedback" data-bv-field="country" style="display: none;"></i>
+                             	</div>
                              </div>      
                       </div>
-                      <button type="submit" class="btn btn-blue">Register</button>
+                      <button type="submit" class="btn btn-blue">Adicionar</button>
                   </form>
               </div>
           </div>

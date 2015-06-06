@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.m.fachade.FCategoria;
+import com.m.fachade.FUsuario;
 
 @Controller
 public class AdminController {
@@ -14,9 +15,13 @@ public class AdminController {
 	@Autowired
 	FCategoria categoria;
 
+	@Autowired
+	FUsuario usuario;
+	
 	@RequestMapping(value="agregarproducto", method = RequestMethod.GET)
 	public String agregar_producto(Model model) {
-		model.addAttribute("categorias", categoria.categorias());
+		model.addAttribute("categoria", categoria.categorias());
+		model.addAttribute("usuarios", usuario.usuarios());
 		return "producto";
 	}
 	

@@ -16,7 +16,7 @@ public class FCategoria {
 	public List<Categoria> categorias() {
 		manager = Manager.getManager().getInstance();
 		
-		TypedQuery<Categoria> categoria = manager.createQuery("SELECT * FROM Categoria", Categoria.class);
+		TypedQuery<Categoria> categoria = manager.createQuery("SELECT c FROM Categoria c", Categoria.class);
 		
 		List<Categoria> categorias = categoria.getResultList();
 		
