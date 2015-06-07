@@ -20,5 +20,10 @@
         <put-attribute name="title" value="" />  
         <put-attribute name="home" value="/WEB-INF/views/producto.jsp" />  
     </definition>  
+
+    <definition name="productos" extends="base.definition">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="home" value="/WEB-INF/views/productos.jsp" />  
+    </definition>  
   
 </tiles-definitions>  

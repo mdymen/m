@@ -21,7 +21,7 @@ public class FUsuario {
 	public List<Usuario> usuarios() {
 		manager = Manager.getManager().getInstance();
 		
-		TypedQuery<Usuario> usuario = manager.createQuery("SELECT u FROM Usuarios u", Usuario.class);
+		TypedQuery<Usuario> usuario = manager.createQuery("SELECT u FROM Usuario u", Usuario.class);
 		
 		List<Usuario> usuarios = usuario.getResultList();
 		

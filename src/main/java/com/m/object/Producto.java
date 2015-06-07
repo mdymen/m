@@ -20,10 +20,24 @@ public class Producto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@OneToOne(targetEntity = Categoria.class, cascade = { CascadeType.ALL})
+	@OneToOne(targetEntity = Categoria.class)
 	@JoinColumn(name = "idCategoria", referencedColumnName = "id")
 	private Categoria Categoria;
 	private int Vencimiento;
+	
+	@OneToOne(targetEntity = Usuario.class)
+	@JoinColumn(name = "idUsuario", referencedColumnName = "id")
+	private Usuario Usuario;
+	
+	public Producto(){}
+	
+	public Producto(Long categoria, Long usuario) {
+		this.Usuario = new Usuario();
+		this.Usuario.setId(usuario);
+		
+		this.Categoria = new Categoria();
+		this.Categoria.setId(categoria);		
+	}
 	
 	public long getId() {
 		return id;
@@ -42,6 +56,12 @@ public class Producto implements Serializable {
 	}
 	public void setVencimiento(int vencimiento) {
 		Vencimiento = vencimiento;
+	}
+	public Usuario getUsuario() {
+		return Usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		Usuario = usuario;
 	}
 	
 }

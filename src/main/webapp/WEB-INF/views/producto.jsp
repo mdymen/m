@@ -19,7 +19,7 @@
                           <div class="col-sm-6">
                               <div class="form-group">
                                   <span class="input-icon icon-right">
-                                      <input type="text" class="form-control" placeholder="Usuario">
+                                      <input type="text" name="cantidad" class="form-control" placeholder="Cantidad">
                                       <i class="fa fa-user"></i>
                                   </span>
                               </div>
@@ -27,7 +27,7 @@
                           <div class="col-sm-6">
                               <div class="form-group">		
 	                                 <select class="form-control" name="usuario" data-bv-field="usuario">
-	                            		<c:forEach var="usuario" items="${usuario}">
+	                            		<c:forEach var="usuario" items="${usuarios}">
 	                            			<option value="${usuario.getId()}">${usuario.getNombre()}</option>
 	                            		</c:forEach>	
 	                                 </select><i class="form-control-feedback" data-bv-field="usuario" style="display: none;"></i>
@@ -37,11 +37,11 @@
                       <div class="row">
 							<div class="col-sm-6">				
 								<div class="form-group">			
-	                                 <select class="form-control" name="country" data-bv-field="country">
+	                                 <select class="form-control" name="categoria" data-bv-field="categoria">
 	                            		<c:forEach var="categoria" items="${categoria}">
 	                            			<option value="${categoria.getId()}">${categoria.getNombre()}</option>
 	                            		</c:forEach>	
-	                                 </select><i class="form-control-feedback" data-bv-field="country" style="display: none;"></i>
+	                                 </select><i class="form-control-feedback" data-bv-field="categoria" style="display: none;"></i>
                              	</div>
                              </div>      
                       </div>
