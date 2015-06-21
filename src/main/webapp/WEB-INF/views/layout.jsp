@@ -1,739 +1,227 @@
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>  
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>Genius Dashboard - Bootstrap Admin Template</title>
+	<meta name="description" content="Genius Dashboard - Bootstrap Admin Template.">
+	<meta name="author" content="Łukasz Holeczek">
+	<meta name="keyword" content="Genius, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link rel="stylesheet" href="resources/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="resources/assets/css/style.min.css"  />
+	<link rel="stylesheet" href="resources/assets/css/retina.min.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="resources/assets/css/print.css" />
+	<!-- end: CSS -->
+	
 
-<head>
-    <meta charset="utf-8">
-    <title>M</title>
-
-    <meta name="description" content="alerts">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="<c:url value="resources/assets/img/favicon.png" />" type="image/x-icon">
-
-    <!--Basic Styles-->
-    
-    <link href="<c:url value="resources/assets/css/bootstrap.min.css" />" rel="stylesheet">
-    <link id="bootstrap-rtl-link" href="" rel="stylesheet">
-    <link href="<c:url value="resources/assets/css/font-awesome.min.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/assets/css/weather-icons.min.css" />" rel="stylesheet">
-
-    <!--Fonts-->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
-
-    <!--Beyond styles-->
-    <link href="<c:url value="resources/assets/css/beyond.min.css" />" id="beyond-link" rel="stylesheet">
-    <link href="<c:url value="resources/assets/css/demo.min.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/assets/css/typicons.min.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/assets/css/animate.min.css" />" rel="stylesheet">
-    <link id="skin-link" href="" rel="stylesheet" type="text/css">
-
-    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
-    <script async="" src="http://www.google-analytics.com/analytics.js"></script>
-    <script src="<c:url value="resources/assets/js/skins.min.js" />" ></script>
-</head>
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="resources/assets/js/respond.min.js"></script>
+		
+	<![endif]-->
+	
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/assets/ico/apple-touch-icon-144-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/assets/ico/apple-touch-icon-114-precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/assets/ico/apple-touch-icon-72-precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="resources/assets/ico/apple-touch-icon-57-precomposed.png"/>
+	<link rel="shortcut icon" href="resources/assets/ico/favicon.png" />
+	<!-- end: Favicon and Touch Icons -->	
+		
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
 
 <body>
-    <!-- Loading Container -->
-    <div class="loading-container loading-inactive">
-        <div class="loader"></div>
-    </div>
-    <!--  /Loading Container -->
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="navbar-container">
-                <!-- Navbar Barnd -->
-                <div class="navbar-header pull-left">
-                    <a href="#" class="navbar-brand">
-                        <small>
-                            <img src="assets/img/logo.png" alt="">
-                        </small>
-                    </a>
-                </div>
-                <!-- /Navbar Barnd -->
-                <!-- Sidebar Collapse -->
-                <div class="sidebar-collapse" id="sidebar-collapse">
-                    <i class="collapse-icon fa fa-bars"></i>
-                </div>
-                <!-- /Sidebar Collapse -->
-                <!-- Account Area and Settings --->
-                <div class="navbar-header pull-right">
-                    <div class="navbar-account">
-                        <ul class="account-area">
-                            <li>
-                                <a class=" dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
-                                    <i class="icon fa fa-warning"></i>
-                                </a>
-                                <!--Notification Dropdown-->
-                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-notifications">
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <div class="notification-icon">
-                                                    <i class="fa fa-phone bg-themeprimary white"></i>
-                                                </div>
-                                                <div class="notification-body">
-                                                    <span class="title">Skype meeting with Patty</span>
-                                                    <span class="description">01:00 pm</span>
-                                                </div>
-                                                <div class="notification-extra">
-                                                    <i class="fa fa-clock-o themeprimary"></i>
-                                                    <span class="description">office</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <div class="notification-icon">
-                                                    <i class="fa fa-check bg-darkorange white"></i>
-                                                </div>
-                                                <div class="notification-body">
-                                                    <span class="title">Uncharted break</span>
-                                                    <span class="description">03:30 pm - 05:15 pm</span>
-                                                </div>
-                                                <div class="notification-extra">
-                                                    <i class="fa fa-clock-o darkorange"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <div class="notification-icon">
-                                                    <i class="fa fa-gift bg-warning white"></i>
-                                                </div>
-                                                <div class="notification-body">
-                                                    <span class="title">Kate birthday party</span>
-                                                    <span class="description">08:30 pm</span>
-                                                </div>
-                                                <div class="notification-extra">
-                                                    <i class="fa fa-calendar warning"></i>
-                                                    <i class="fa fa-clock-o warning"></i>
-                                                    <span class="description">at home</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <div class="notification-icon">
-                                                    <i class="fa fa-glass bg-success white"></i>
-                                                </div>
-                                                <div class="notification-body">
-                                                    <span class="title">Dinner with friends</span>
-                                                    <span class="description">10:30 pm</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown-footer ">
-                                        <span>
-                                            Today, March 28
-                                        </span>
-                                        <span class="pull-right">
-                                            10°c
-                                            <i class="wi wi-cloudy"></i>
-                                        </span>
-                                    </li>
-                                </ul>
-                                <!--/Notification Dropdown-->
-                            </li>
-                            <li>
-                                <a class="dropdown-toggle" data-toggle="dropdown" title="Mails" href="#">
-                                    <i class="icon fa fa-envelope"></i>
-                                    <span class="badge">3</span>
-                                </a>
-                                <!--Messages Dropdown-->
-                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
-                                            <div class="message">
-                                                <span class="message-sender">
-                                                    Divyia Austin
-                                                </span>
-                                                <span class="message-time">
-                                                    2 minutes ago
-                                                </span>
-                                                <span class="message-subject">
-                                                    Here's the recipe for apple pie
-                                                </span>
-                                                <span class="message-body">
-                                                    to identify the sending application when the senders image is shown for the main icon
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/img/avatars/bing.png" class="message-avatar" alt="Microsoft Bing">
-                                            <div class="message">
-                                                <span class="message-sender">
-                                                    Bing.com
-                                                </span>
-                                                <span class="message-time">
-                                                    Yesterday
-                                                </span>
-                                                <span class="message-subject">
-                                                    Bing Newsletter: The January Issue‏
-                                                </span>
-                                                <span class="message-body">
-                                                    Discover new music just in time for the Grammy® Awards.
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="assets/img/avatars/adam-jansen.jpg" class="message-avatar" alt="Divyia Austin">
-                                            <div class="message">
-                                                <span class="message-sender">
-                                                    Nicolas
-                                                </span>
-                                                <span class="message-time">
-                                                    Friday, September 22
-                                                </span>
-                                                <span class="message-subject">
-                                                    New 4K Cameras
-                                                </span>
-                                                <span class="message-body">
-                                                    The 4K revolution has come over the horizon and is reaching the general populous
-                                                </span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!--/Messages Dropdown-->
-                            </li>
+		<!-- start: Header -->
+	<header class="navbar">
+		<div class="container">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".sidebar-nav.nav-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			</button>
+			<a id="main-menu-toggle" class="hidden-xs open"><i class="fa fa-bars"></i></a>		
+			<a class="navbar-brand col-md-2 col-sm-1 col-xs-2" href="index.html"><span>Genius</span></a>
+			
+			<!-- start: Header Menu -->
+			<div class="nav-no-collapse header-nav">
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown hidden-xs">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="index.html#">
+							<i class="fa fa-warning"></i>
+							<span class="number">11</span>
+						</a>
+						
+					</li>
+					<!-- start: Notifications Dropdown -->
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</ul>
+			</div>
+			<!-- end: Header Menu -->
+			
+		</div>	
+	</header>
+	<!-- end: Header -->
+	
+		<div class="container">
+		<div class="row">
+				
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="col-lg-2 col-sm-1 " style="min-height: 587px;">
+								
+				<div class="sidebar-nav nav-collapse collapse navbar-collapse">
+					<ul class="nav main-menu">
+						<li class="active"><a href="index.html"><i class="fa fa-bar-chart-o"></i><span class="hidden-sm text"> Dashboard</span></a></li>	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					</ul>
+				</div>
+									<a href="index.html#" id="main-menu-min" class="full visible-md visible-lg"><i class="fa fa-angle-double-left"></i></a>
+							</div>
+			<!-- end: Main Menu -->
+						
+			<!-- start: Content -->
+			<div id="content" class="col-lg-10 col-sm-11 ">
+				<tiles:insertAttribute name="home" />  
+			
+			<!--/row-->	
+			
+			
+			
+							
+			
+     
+					
+			</div>
+			<!-- end: Content -->
+				
+				</div><!--/row-->		
+		
+	</div><!--/container-->
+	
+	
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<p>Here settings can be configured...</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+	<div class="clearfix"></div>
+	
+	<footer>
+		
+		<div class="row">
+			
+			<div class="col-sm-5">
+				© 2014 creativeLabs. <a href="http://bootstrapmaster.com">Admin Templates</a> by BootstrapMaster
+			</div><!--/.col-->
+			
+			<div class="col-sm-7 text-right">
+				Powered by: <a href="http://bootstrapmaster.com/demo/genius/" alt="Bootstrap Admin Templates">Genius Dashboard</a> | Based on Bootstrap 3.1.1 | Built with brix.io <a href="http://brix.io" alt="Brix.io - Interface Builder">Interface Builder</a>
+			</div><!--/.col-->	
+			
+		</div><!--/.row-->	
 
-                            <li>
-                                <a class="dropdown-toggle" data-toggle="dropdown" title="Tasks" href="#">
-                                    <i class="icon fa fa-tasks"></i>
-                                    <span class="badge">4</span>
-                                </a>
-                                <!--Tasks Dropdown-->
-                                <ul class="pull-right dropdown-menu dropdown-tasks dropdown-arrow ">
-                                    <li class="dropdown-header bordered-darkorange">
-                                        <i class="fa fa-tasks"></i>
-                                        4 Tasks In Progress
-                                    </li>
+	</footer>
+		
+	<!-- start: JavaScript-->
+	<!--[if !IE]>-->
 
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <span class="pull-left">Account Creation</span>
-                                                <span class="pull-right">65%</span>
-                                            </div>
+			<script src="<c:url value="resources/assets/js/jquery-2.1.0.min.js" />" ></script>
 
-                                            <div class="progress progress-xs">
-                                                <div style="width:65%" class="progress-bar"></div>
-                                            </div>
-                                        </a>
-                                    </li>
+	<!--<![endif]-->
 
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <span class="pull-left">Profile Data</span>
-                                                <span class="pull-right">35%</span>
-                                            </div>
+	<!--[if IE]>
+	
+		<script src="<c:url value="resources/assets/js/jquery-1.11.0.min.js">" ></script>
+	
+	<![endif]-->
 
-                                            <div class="progress progress-xs">
-                                                <div style="width:35%" class="progress-bar progress-bar-success"></div>
-                                            </div>
-                                        </a>
-                                    </li>
+	<!--[if !IE]>-->
 
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <span class="pull-left">Updating Resume</span>
-                                                <span class="pull-right">75%</span>
-                                            </div>
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.1.0.min.js'>"+"<"+"/script>");
+		</script>
 
-                                            <div class="progress progress-xs">
-                                                <div style="width:75%" class="progress-bar progress-bar-darkorange"></div>
-                                            </div>
-                                        </a>
-                                    </li>
+	<!--<![endif]-->
 
-                                    <li>
-                                        <a href="#">
-                                            <div class="clearfix">
-                                                <span class="pull-left">Adding Contacts</span>
-                                                <span class="pull-right">10%</span>
-                                            </div>
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='assets/js/jquery-1.11.0.min.js'>"+"<"+"/script>");
+		</script>
+		
+	<![endif]-->
+	<script src="<c:url value="resources/assets/js/jquery-migrate-1.2.1.min.js" />" />
+	<script src="<c:url value="resources/assets/js/bootstrap.min.js" />" ></script>
+	
+		
+	
+	
+	<!-- page scripts -->
+	<script src="<c:url value="resources/assets/js/jquery-ui-1.10.3.custom.min.js" />" ></script>
+	<script src="<c:url value="resources/assets/js/jquery.ui.touch-punch.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.sparkline.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/fullcalendar.min.js" />"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="<c:url value="resources/assets/js/excanvas.min.js" />"></script><![endif]-->
+	<script src="<c:url value="resources/assets/js/jquery.flot.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.flot.pie.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.flot.stack.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.flot.resize.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.flot.time.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.autosize.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.placeholder.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/moment.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/daterangepicker.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.easy-pie-chart.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery.dataTables.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/dataTables.bootstrap.min.js" />"></script>
+	
+	<!-- theme scripts -->
+	<script src="<c:url value="resources/assets/js/custom.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/core.min.js" />"></script>
+	
+	<!-- inline scripts related to this page -->
+	<script src="<c:url value="resources/assets/js/pages/index.js"/> "></script>
+	
+	<!-- end: JavaScript-->
+	
 
-                                            <div class="progress progress-xs">
-                                                <div style="width:10%" class="progress-bar progress-bar-warning"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="dropdown-footer">
-                                        <a href="#">
-                                            See All Tasks
-                                        </a>
-                                        <button class="btn btn-xs btn-default shiny darkorange icon-only pull-right"><i class="fa fa-check"></i></button>
-                                    </li>
-                                </ul>
-                                <!--/Tasks Dropdown-->
-                            </li>
-                            <li>
-                                <a class="wave in" id="chat-link" title="Chat" href="#">
-                                    <i class="icon glyphicon glyphicon-comment"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
-                                    <div class="avatar" title="View your public profile">
-                                        <img src="assets/img/avatars/adam-jansen.jpg">
-                                    </div>
-                                    <section>
-                                        <h2><span class="profile"><span>David Stevenson</span></span></h2>
-                                    </section>
-                                </a>
-                                <!--Login Area Dropdown-->
-                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-                                    <li class="username"><a>David Stevenson</a></li>
-                                    <li class="email"><a>David.Stevenson@live.com</a></li>
-                                    <!--Avatar Area-->
-                                    <li>
-                                        <div class="avatar-area">
-                                            <img src="assets/img/avatars/adam-jansen.jpg" class="avatar">
-                                            <span class="caption">Change Photo</span>
-                                        </div>
-                                    </li>
-                                    <!--Avatar Area-->
-                                    <li class="edit">
-                                        <a href="profile.html" class="pull-left">Profile</a>
-                                        <a href="#" class="pull-right">Setting</a>
-                                    </li>
-                                    <!--Theme Selector Area-->
-                                    <li class="theme-area">
-                                        <ul class="colorpicker" id="skin-changer">
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="assets/css/skins/blue.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="assets/css/skins/azure.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="assets/css/skins/teal.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#53a93f;" rel="assets/css/skins/green.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#FF8F32;" rel="assets/css/skins/orange.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#cc324b;" rel="assets/css/skins/pink.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#AC193D;" rel="assets/css/skins/darkred.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#8C0095;" rel="assets/css/skins/purple.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#0072C6;" rel="assets/css/skins/darkblue.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#585858;" rel="assets/css/skins/gray.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#474544;" rel="assets/css/skins/black.min.css"></a></li>
-                                            <li><a class="colorpick-btn" href="#" style="background-color:#001940;" rel="assets/css/skins/deepblue.min.css"></a></li>
-                                        </ul>
-                                    </li>
-                                    <!--/Theme Selector Area-->
-                                    <li class="dropdown-footer">
-                                        <a href="login.html">
-                                            Sign out
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!--/Login Area Dropdown-->
-                            </li>
-                            <!-- /Account Area -->
-                            <!--Note: notice that setting div must start right after account area list.
-                            no space must be between these elements-->
-                            <!-- Settings -->
-                        </ul><div class="setting">
-                            <a id="btn-setting" title="Setting" href="#">
-                                <i class="icon glyphicon glyphicon-cog"></i>
-                            </a>
-                        </div><div class="setting-container">
-                            <label>
-                                <input type="checkbox" id="checkbox_fixednavbar">
-                                <span class="text">Fixed Navbar</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="checkbox_fixedsidebar">
-                                <span class="text">Fixed SideBar</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="checkbox_fixedbreadcrumbs">
-                                <span class="text">Fixed BreadCrumbs</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" id="checkbox_fixedheader">
-                                <span class="text">Fixed Header</span>
-                            </label>
-                        </div>
-                        <!-- Settings -->
-                    </div>
-                </div>
-                <!-- /Account Area and Settings -->
-            </div>
-        </div>
-    </div>
-    <!-- /Navbar -->
-    <!-- Main Container -->
-    <div class="main-container container-fluid">
-        <!-- Page Container -->
-        <div class="page-container">
-            <!-- Page Sidebar -->
-            <div class="page-sidebar" id="sidebar">
-                <!-- Page Sidebar Header-->
-                <div class="sidebar-header-wrapper">
-                    <input type="text" class="searchinput">
-                    <i class="searchicon fa fa-search"></i>
-                    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
-                </div>
-                <!-- /Page Sidebar Header -->
-                <!-- Sidebar Menu -->
-                <ul class="nav sidebar-menu">
-                    <!--Dashboard-->
-                    <li>
-                        <a href="index.html">
-                            <i class="menu-icon glyphicon glyphicon-user"></i>
-                            <span class="menu-text"> Cuenta </span>
-                        </a>
-                    </li>
-                    <!--Databoxes-->
-                    <li>
-                        <a href="databoxes.html">
-                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
-                            <span class="menu-text"> Productos </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="widgets.html">
-                            <i class="menu-icon fa fa-th"></i>
-                            <span class="menu-text"> Produccion </span>
-                        </a>
-                    </li>                    
-                    <!--Widgets-->
-                    <li>
-                        <a href="widgets.html">
-                            <i class="menu-icon fa fa-usd"></i>
-                            <span class="menu-text"> Mercado </span>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /Sidebar Menu -->
-            </div>
-            <!-- /Page Sidebar -->
-            <!-- Chat Bar -->
-            <div id="chatbar" class="page-chatbar">
-                <div class="chatbar-contacts">
-                    <div class="contacts-search">
-                        <input type="text" class="searchinput" placeholder="Search Contacts">
-                        <i class="searchicon fa fa-search"></i>
-                        <div class="searchhelper">Search Your Contacts and Chat History</div>
-                    </div>
-                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 581px;"><ul class="contacts-list" style="overflow: hidden; width: auto; height: 581px;">
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/divyia.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Divyia Philips</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    last week
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/Nicolai-Larson.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Adam Johnson</div>
-                                <div class="contact-status">
-                                    <div class="offline"></div>
-                                    <div class="status">left 4 mins ago</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    today
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/John-Smith.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">John Smith</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    1:57 am
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/Osvaldus-Valutis.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Osvaldus Valutis</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    today
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/Javi-Jimenez.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Javi Jimenez</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    today
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/Stephanie-Walter.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Stephanie Walter</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    yesterday
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/Sergey-Azovskiy.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Sergey Azovskiy</div>
-                                <div class="contact-status">
-                                    <div class="offline"></div>
-                                    <div class="status">offline since oct 24</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    22 oct
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/Lee-Munroe.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Lee Munroe</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    today
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="contact-avatar">
-                                <img src="assets/img/avatars/divyia.jpg">
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-name">Divyia Philips</div>
-                                <div class="contact-status">
-                                    <div class="online"></div>
-                                    <div class="status">online</div>
-                                </div>
-                                <div class="last-chat-time">
-                                    last week
-                                </div>
-                            </div>
-                        </li>
-                    </ul><div class="slimScrollBar" style="width: 4px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; left: 1px; background: rgb(45, 195, 232);"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; left: 1px; background: rgb(51, 51, 51);"></div></div>
-                </div>
-                <div class="chatbar-messages" style="display: none;">
-                    <div class="messages-contact">
-                        <div class="contact-avatar">
-                            <img src="assets/img/avatars/divyia.jpg">
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-name">Divyia Philips</div>
-                            <div class="contact-status">
-                                <div class="online"></div>
-                                <div class="status">online</div>
-                            </div>
-                            <div class="last-chat-time">
-                                a moment ago
-                            </div>
-                            <div class="back">
-                                <i class="fa fa-arrow-circle-left"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 417px;"><ul class="messages-list" style="overflow: hidden; width: auto; height: 417px;">
-                        <li class="message">
-                            <div class="message-info">
-                                <div class="bullet"></div>
-                                <div class="contact-name">Me</div>
-                                <div class="message-time">10:14 AM, Today</div>
-                            </div>
-                            <div class="message-body">
-                                Hi, Hope all is good. Are we meeting today?
-                            </div>
-                        </li>
-                        <li class="message reply">
-                            <div class="message-info">
-                                <div class="bullet"></div>
-                                <div class="contact-name">Divyia</div>
-                                <div class="message-time">10:15 AM, Today</div>
-                            </div>
-                            <div class="message-body">
-                                Hi, Hope all is good. Are we meeting today?
-                            </div>
-                        </li>
-                        <li class="message">
-                            <div class="message-info">
-                                <div class="bullet"></div>
-                                <div class="contact-name">Me</div>
-                                <div class="message-time">10:14 AM, Today</div>
-                            </div>
-                            <div class="message-body">
-                                Hi, Hope all is good. Are we meeting today?
-                            </div>
-                        </li>
-                        <li class="message reply">
-                            <div class="message-info">
-                                <div class="bullet"></div>
-                                <div class="contact-name">Divyia</div>
-                                <div class="message-time">10:15 AM, Today</div>
-                            </div>
-                            <div class="message-body">
-                                Hi, Hope all is good. Are we meeting today?
-                            </div>
-                        </li>
-                        <li class="message">
-                            <div class="message-info">
-                                <div class="bullet"></div>
-                                <div class="contact-name">Me</div>
-                                <div class="message-time">10:14 AM, Today</div>
-                            </div>
-                            <div class="message-body">
-                                Hi, Hope all is good. Are we meeting today?
-                            </div>
-                        </li>
-                        <li class="message reply">
-                            <div class="message-info">
-                                <div class="bullet"></div>
-                                <div class="contact-name">Divyia</div>
-                                <div class="message-time">10:15 AM, Today</div>
-                            </div>
-                            <div class="message-body">
-                                Hi, Hope all is good. Are we meeting today?
-                            </div>
-                        </li>
-                    </ul><div class="slimScrollBar" style="width: 4px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; left: 1px; background: rgb(45, 195, 232);"></div><div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; left: 1px; background: rgb(51, 51, 51);"></div></div>
-                    <div class="send-message">
-                        <span class="input-icon icon-right">
-                            <textarea rows="4" class="form-control" placeholder="Type your message"></textarea>
-                            <i class="fa fa-camera themeprimary"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <!-- /Chat Bar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">More Pages</a>
-                        </li>
-                        <li class="active">Blank Page</li>
-                    </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-                <!-- Page Header -->
-                <div class="page-header position-relative">
-                    <div class="header-title">
-                        <h1>
-                            Blank Page
-                        </h1>
-                    </div>
-                    <!--Header Buttons-->
-                    <div class="header-buttons">
-                        <a class="sidebar-toggler" href="#">
-                            <i class="fa fa-arrows-h"></i>
-                        </a>
-                        <a class="refresh" id="refresh-toggler" href="">
-                            <i class="glyphicon glyphicon-refresh"></i>
-                        </a>
-                        <a class="fullscreen" id="fullscreen-toggler" href="#">
-                            <i class="glyphicon glyphicon-fullscreen"></i>
-                        </a>
-                    </div>
-                    <!--Header Buttons End-->
-                </div>
-                <!-- /Page Header -->
-                <!-- Page Body -->
-                <div class="page-body">
-                    <!-- Your Content Goes Here -->
-                    <tiles:insertAttribute name="home" />  
-                </div>
-                <!-- /Page Body -->
-            </div>
-            <!-- /Page Content -->
-        </div>
-        <!-- /Page Container -->
-        <!-- Main Container -->
-
-    </div>
-
-    <!--Basic Scripts-->
-    <script src="<c:url value="resources/assets/js/jquery-2.0.3.min.js" />"></script>
-    <script src="<c:url value="resources/assets/js/bootstrap.min.js" />"></script>
-    <script src="<c:url value="resources/assets/js/slimscroll/jquery.slimscroll.min.js" />"></script>
-
-    <!--Beyond Scripts-->
-    <script src="<c:url value="resources/assets/js/beyond.min.js" />" ></script>
-
-    <!--Page Related Scripts-->
-    <!--Google Analytics::Demo Only-->
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-52103994-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
-<!--  /Body -->
-
-</body>
+<div class="daterangepicker dropdown-menu opensright" style="top: 77px; left: 857.875px; right: auto; min-width: 160px;"><div class="calendar right" style="display: block;"><div class="calendar-date"><table class="table-condensed"><thead><tr><th></th><th colspan="5" style="width: auto">Sep 2013</th><th class="next available"><i class="icon-arrow-r" />">ht glyphicon glyphicon-arrow-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="off disabled" data-title="r0c0">25</td><td class="off disabled" data-title="r0c1">26</td><td class="off disabled" data-title="r0c2">27</td><td class="off disabled" data-title="r0c3">28</td><td class="off disabled" data-title="r0c4">29</td><td class="off disabled" data-title="r0c5">30</td><td class="off disabled" data-title="r0c6">31</td></tr><tr><td class="off disabled" data-title="r1c0">1</td><td class="off disabled" data-title="r1c1">2</td><td class="off disabled" data-title="r1c2">3</td><td class="off disabled" data-title="r1c3">4</td><td class="off disabled" data-title="r1c4">5</td><td class="off disabled" data-title="r1c5">6</td><td class="off disabled" data-title="r1c6">7</td></tr><tr><td class="off disabled" data-title="r2c0">8</td><td class="available in-range start-date" data-title="r2c1">9</td><td class="available in-range" data-title="r2c2">10</td><td class="available in-range" data-title="r2c3">11</td><td class="available in-range" data-title="r2c4">12</td><td class="available in-range" data-title="r2c5">13</td><td class="available in-range" data-title="r2c6">14</td></tr><tr><td class="available in-range" data-title="r3c0">15</td><td class="available in-range" data-title="r3c1">16</td><td class="available in-range" data-title="r3c2">17</td><td class="available in-range" data-title="r3c3">18</td><td class="available in-range" data-title="r3c4">19</td><td class="available in-range" data-title="r3c5">20</td><td class="available in-range" data-title="r3c6">21</td></tr><tr><td class="available in-range" data-title="r4c0">22</td><td class="available in-range" data-title="r4c1">23</td><td class="available in-range" data-title="r4c2">24</td><td class="available in-range" data-title="r4c3">25</td><td class="available in-range" data-title="r4c4">26</td><td class="available in-range" data-title="r4c5">27</td><td class="available active end-date" data-title="r4c6">28</td></tr><tr><td class="available" data-title="r5c0">29</td><td class="available" data-title="r5c1">30</td><td class="available off" data-title="r5c2">1</td><td class="available off" data-title="r5c3">2</td><td class="available off" data-title="r5c4">3</td><td class="available off" data-title="r5c5">4</td><td class="available off" data-title="r5c6">5</td></tr></tbody></table></div></div><div class="calendar left" style="display: block;"><div class="calendar-date"><table class="table-condensed"><thead><tr><th class="prev available"><i class="icon-arrow-left glyphicon glyphicon-arrow-left"></i></th><th colspan="5" style="width: auto">Sep 2013</th><th class="next available"><i class="icon-arrow-right glyphicon glyphicon-arrow-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="available off" data-title="r0c0">25</td><td class="available off" data-title="r0c1">26</td><td class="available off" data-title="r0c2">27</td><td class="available off" data-title="r0c3">28</td><td class="available off" data-title="r0c4">29</td><td class="available off" data-title="r0c5">30</td><td class="available off" data-title="r0c6">31</td></tr><tr><td class="available" data-title="r1c0">1</td><td class="available" data-title="r1c1">2</td><td class="available" data-title="r1c2">3</td><td class="available" data-title="r1c3">4</td><td class="available" data-title="r1c4">5</td><td class="available" data-title="r1c5">6</td><td class="available" data-title="r1c6">7</td></tr><tr><td class="available" data-title="r2c0">8</td><td class="available active start-date" data-title="r2c1">9</td><td class="available in-range" data-title="r2c2">10</td><td class="available in-range" data-title="r2c3">11</td><td class="available in-range" data-title="r2c4">12</td><td class="available in-range" data-title="r2c5">13</td><td class="available in-range" data-title="r2c6">14</td></tr><tr><td class="available in-range" data-title="r3c0">15</td><td class="available in-range" data-title="r3c1">16</td><td class="available in-range" data-title="r3c2">17</td><td class="available in-range" data-title="r3c3">18</td><td class="available in-range" data-title="r3c4">19</td><td class="available in-range" data-title="r3c5">20</td><td class="available in-range" data-title="r3c6">21</td></tr><tr><td class="available in-range" data-title="r4c0">22</td><td class="available in-range" data-title="r4c1">23</td><td class="available in-range" data-title="r4c2">24</td><td class="available in-range" data-title="r4c3">25</td><td class="available in-range" data-title="r4c4">26</td><td class="available in-range" data-title="r4c5">27</td><td class="available in-range end-date" data-title="r4c6">28</td></tr><tr><td class="available" data-title="r5c0">29</td><td class="available" data-title="r5c1">30</td><td class="available off" data-title="r5c2">1</td><td class="available off" data-title="r5c3">2</td><td class="available off" data-title="r5c4">3</td><td class="available off" data-title="r5c5">4</td><td class="available off" data-title="r5c6">5</td></tr></tbody></table></div></div><div class="ranges"><div class="range_inputs"><div class="daterangepicker_start_input" style="float: left"><label for="daterangepicker_start">From</label><input class="input-mini" type="text" name="daterangepicker_start" value="" disabled="disabled"></div><div class="daterangepicker_end_input" style="float: left; padding-left: 11px"><label for="daterangepicker_end">To</label><input class="input-mini" type="text" name="daterangepicker_end" value="" disabled="disabled"></div><button class="btn-success applyBtn btn btn-small">Apply</button>&nbsp;<button class="btn-default cancelBtn btn btn-small">Cancel</button></div></div></div><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; width: 599.328125px; font-family: Lato, sans-serif; font-size: 12px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; line-height: 17.142858505249px;" class="autosizejs"></textarea></body></html>
