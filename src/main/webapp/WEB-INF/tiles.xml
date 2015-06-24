@@ -10,6 +10,10 @@
         <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />  
     </definition>
   
+   <definition name="register" template="/WEB-INF/views/sinlayout.jsp">
+   		<put-attribute name="home" value="/WEB-INF/views/register.jsp" />
+   </definition>
+  
     <definition name="home" extends="base.definition">  
         <put-attribute name="title"  
             value="Being Java Guys | Tiles Integration" />  

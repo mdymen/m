@@ -148,9 +148,11 @@
 								
 				<div class="sidebar-nav nav-collapse collapse navbar-collapse">
 					<ul class="nav main-menu">
-						<li class="active"><a href="index.html"><i class="fa fa-bar-chart-o"></i><span class="hidden-sm text"> Dashboard</span></a></li>	
-						
-						
+						<li class="active"><a href="index.html"><i class="fa fa-bar-chart-o"></i><span class="hidden-sm text"> Inicio</span></a></li>	
+						<li class=""><a href="index.html"><i class="fa fa-user"></i><span class="hidden-sm text"> Cuenta</span></a></li>
+						<li class=""><a href="index.html"><i class="fa fa-book"></i><span class="hidden-sm text"> Productos</span></a></li>
+						<li class=""><a href="index.html"><i class="fa fa-usd"></i><span class="hidden-sm text"> Mercado</span></a></li>
+						<li class=""><a href="index.html"><i class="fa fa-lock"></i><span class="hidden-sm text"> Empresas</span></a></li>
 						
 						
 						

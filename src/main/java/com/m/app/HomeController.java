@@ -45,6 +45,11 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="register", method = RequestMethod.GET)
+	public String register(Locale locale, Model model) {
+		return "register";
+	}
+	
 	@RequestMapping(value="/home", method=RequestMethod.POST )
 	public String home(Usuario usuario) {
 		this.usuario.addUser(usuario);
