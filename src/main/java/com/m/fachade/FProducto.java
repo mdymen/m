@@ -1,7 +1,10 @@
 package com.m.fachade;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import com.m.object.Producto;
 
@@ -20,13 +23,34 @@ public class FProducto {
 		
 		for (int i = 0; i < cant; i++) {
 		
-			manager.persist(new Producto(Long.parseLong(usuario_id), Long.parseLong(categoria_id)));
+			manager.persist(new Producto(Long.parseLong(categoria_id), Long.parseLong(usuario_id)));
 		
 		}
 		
 		manager.getTransaction().commit();
 		
 		manager.close();
+	}
+	
+	public List<Producto> getProductos(int usuario) {
+		manager = Manager.getManager().getInstance();
+
+		//manager.getTransaction().begin();
+		
+		Query query = manager.createQuery("SELECT p FROM Producto p where idUsuario = :usuario", Producto.class);
+		query.setParameter("usuario", usuario);
+		
+		//manager.getTransaction().commit();
+		@SuppressWarnings("unchecked")
+		List<Producto> productos = (List<Producto>) query.getResultList();
+		
+		manager.close();
+		
+		return productos;
+	}
+	
+	public List<Producto> getProductos(int categoria, int usuario) {
+		return null;
 	}
 	
 }

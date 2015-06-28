@@ -2,6 +2,7 @@ package com.m.app;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +15,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.m.fachade.FCategoria;
+import com.m.fachade.FProducto;
 import com.m.fachade.FUsuario;
+import com.m.object.Categoria;
 import com.m.object.Usuario;
 
 /**
@@ -30,6 +35,12 @@ public class HomeController {
 	
 	@Autowired
 	FUsuario usuario;
+
+	@Autowired
+	FProducto producto;
+	
+	@Autowired
+	FCategoria categoria;
 	
 	@RequestMapping(value="/cuenta", method = RequestMethod.GET)
 	public String cuenta(Locale locale, Model Model, HttpServletRequest request) {
@@ -69,8 +80,7 @@ public class HomeController {
 
 	
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String login(Locale locale, Model model) {
-		
+	public String login(Locale locale, Model model) {		
 		return "login";
 	}
 	
@@ -90,6 +100,20 @@ public class HomeController {
 	public String home(Usuario usuario) {
 		this.usuario.addUser(usuario);
 		return "";
+	}
+	
+	@RequestMapping(value="/addproducto", method=RequestMethod.GET)
+	public String addproducto(Model model) {
+		model.addAttribute("categorias", categoria.categorias());
+		model.addAttribute("usuarios", usuario.usuarios());
+		return "addproducto";
+	}
+	
+	@RequestMapping(value="/addproducto2", method=RequestMethod.POST)
+	public String addproducto2(@RequestParam("categoria") String categoria, @RequestParam("usuario") String usuario, 
+			@RequestParam("cantidad") String cantidad  ) {
+		producto.adicionarProductos(usuario, cantidad, categoria);
+		return "addproducto";
 	}
 	
 }

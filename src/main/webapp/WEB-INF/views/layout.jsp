@@ -27,6 +27,9 @@
 	<!-- end: CSS -->
 	
 
+	<script src="<c:url value="resources/assets/js/jquery-1.11.0.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery-2.1.0.min.js" />"></script>
+
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 		

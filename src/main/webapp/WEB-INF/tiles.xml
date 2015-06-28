@@ -20,7 +20,9 @@
    <definition name="producir" template="/WEB-INF/views/layout.jsp">
    		<put-attribute name="home" value="/WEB-INF/views/producir.jsp" />
    </definition>
-
+   <definition name="addproducto" template="/WEB-INF/views/layout.jsp">
+   		<put-attribute name="home" value="/WEB-INF/views/addproducto.jsp" />
+   </definition>
 
    <definition name="mercado" template="/WEB-INF/views/layout.jsp">
    		<put-attribute name="home" value="/WEB-INF/views/mercado.jsp" />

@@ -232,3 +232,13 @@
 				</div><!--/col-->
 			
 			</div>
+			
+			
+			<script type="text/javascript">
+				$(function() {
+					$.post("vender", {id: "hola"}, function(response) {
+						console.log(response);
+					});
+				})
+			
+			</script>

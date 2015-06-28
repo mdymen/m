@@ -21,7 +21,8 @@ public class ProductoController {
 	FVenta venta;
 	
 	@RequestMapping(value="/productos", method = RequestMethod.GET)
-	public String productos() {
+	public String productos(Model model) {
+		model.addAttribute("productos", producto.getProductos(2));
 		return "productos";
 	}
 	
