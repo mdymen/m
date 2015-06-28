@@ -6,9 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import com.m.object.Usuario;
+import com.m.object.Producto;
 
 public class FUsuario {
 
@@ -43,5 +45,17 @@ public class FUsuario {
 	    
 	    return usuario;
 	    
+	}
+	
+	public int cantidad_productos(Usuario usuario) {
+		manager = Manager.getManager().getInstance();
+		
+		Query query = manager.createQuery("SELECT count(p.id) FROM Producto p"
+				+ " JOIN p.Usuario u "
+				+ " where u.Nombre = :nombre");
+		query.setParameter("nombre", usuario.getNombre());
+		
+		return query.getFirstResult();
+		
 	}
 }

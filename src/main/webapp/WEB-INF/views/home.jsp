@@ -7,13 +7,15 @@
 </head>
 <body>
 
+ ${usuario}
+
 <div class="col-lg-3 col-sm-6 col-xs-6 col-xxs-12">
 					<div class="smallstat box">
 						<i class="fa fa-usd darkGreen"></i>
 						<span class="title">Capital</span>
-						<span class="value">$1 999,99</span>
+						<span class="value">${capital}</span>
 						<a href="" class="more">
-							<span>View More</span>
+							<span>Detalles</span>
 							<i class="fa fa-chevron-right"></i>
 						</a>
 					</div>

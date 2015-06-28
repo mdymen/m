@@ -24,6 +24,7 @@ public class Usuario implements Serializable {
 	public String Nombre;
 	public String Correo;
 	public String Senha;
+	public double Capital;
 	
 	public Usuario() {}
 	
@@ -31,6 +32,14 @@ public class Usuario implements Serializable {
 		this.Nombre = nombre;
 		this.Correo = correo;
 		this.Senha = senha;
+	}
+
+	public double getCapital() {
+		return Capital;
+	}
+
+	public void setCapital(double capital) {
+		Capital = capital;
 	}
 
 	public Long getId() {

@@ -22,7 +22,7 @@
 	<link href="<c:url value="resources/assets/css/bootstrap.min.css" />" rel="stylesheet">
 	<link href="<c:url value="resources/assets/css/style.min.css" />" rel="stylesheet">
 	<link href="<c:url value="resources/assets/css/retina.min.css" />" rel="stylesheet">
-	<link href="<c:url value="resurces/assets/css/print.css" />" rel="stylesheet" type="text/css" media="print">
+	<link href="<c:url value="resources/assets/css/print.css" />" rel="stylesheet" type="text/css" media="print"/>
 	<!-- end: CSS -->
 	
 
@@ -35,11 +35,11 @@
 	<![endif]-->
 	
 	<!-- start: Favicon and Touch Icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<c:url value="resources/assets/ico/apple-touch-icon-144-precomposed.png" />">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="resources/assets/ico/apple-touch-icon-114-precomposed.png" />">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="resources/assets/ico/apple-touch-icon-72-precomposed.png" />">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<c:url value="resources/assets/ico/apple-touch-icon-144-precomposed.png" />" >
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<c:url value="resources/assets/ico/apple-touch-icon-114-precomposed.png" />" >
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<c:url value="resources/assets/ico/apple-touch-icon-72-precomposed.png" /> ">
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<c:url value="resources/assets/ico/apple-touch-icon-57-precomposed.png" />">
-	<link rel="shortcut icon" href="<c:url value="resources/assets/ico/favicon.png" />">
+	<link rel="shortcut icon" href="<c:url value="resource/assets/ico/favicon.png" />" >
 	<!-- end: Favicon and Touch Icons -->	
 		
 </head>
@@ -49,67 +49,59 @@
 		<div class="row">
 					<div id="content" class="col-sm-12 full">
 			<div class="row">
-				
 				<div class="login-box">
 					
 					<div class="header">
-						Create your account
+						Login to Genius Dashboard
+					</div>
+					<p>
+						<a class="btn btn-facebook"><span>Login via Facebook</span></a>
+					</p>
+					
+					<div class="text-with-hr">
+						<span>or use your username</span>
 					</div>
 					
-					<form class="form-horizontal register" action="registrar" method="post">
+					<form class="form-horizontal login" action="logar" method="post">
 						
 						<fieldset class="col-sm-12">
-							
 							<div class="form-group">
-							  	<label class="control-label" for="username">Username</label>
 							  	<div class="controls row">
-									<div class="input-group col-sm-12">
-										<input type="text" class="form-control" id="nombre" name="nombre">
+									<div class="input-group col-sm-12">	
+										<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Usuario"/>
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
 									</div>	
 							  	</div>
 							</div>
 							
 							<div class="form-group">
-							  	<label class="control-label" for="password">Password</label>
 							  	<div class="controls row">
-									<div class="input-group col-sm-12">
-										<input type="password" class="form-control" id="senha" name="senha">
-									</div>	
-							  	</div>
-							</div>
-
-							<div class="form-group">
-							  	<label class="control-label" for="password">E-mail</label>
-							  	<div class="controls row">
-									<div class="input-group col-sm-12">
-										<input type="email" class="form-control" id="correo" name="correo">
+									<div class="input-group col-sm-12">	
+										<input type="password" class="form-control" name="senha" id="senha" placeholder="Contraseña"/>
+										<span class="input-group-addon"><i class="fa fa-key"></i></span>
 									</div>	
 							  	</div>
 							</div>
 
 							<div class="confirm">
-								<div class="icheckbox_square-blue" style="position: relative;"><input type="checkbox" name="agree" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
-								<label for="agree">I agree to <a href="page-register.html#">Term of Use</a></label>
+								<input type="checkbox" name="remember"/>
+								<label for="remember">Remember me</label>
 							</div>	
 
-							
 							<div class="row">
-
-								<button type="submit" class="btn btn-primary btn-lg col-xs-12">Create Account!</button>
+							
+								<button type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
 							
 							</div>
-							
-							<div class="text-with-hr">
-								<span>or use your facebook account</span>
-							</div>
-							
+								
 						</fieldset>	
 
-					</form>			
+					</form>
 					
-					<p>
-						<a class="btn btn-facebook"><span>Register via Facebook</span></a>
-					</p>				
+					<a class="pull-left" href="page-login.html#">Forgot Password?</a>
+					<a class="pull-right" href="page-register.html">Sign Up!</a>
+					
+					<div class="clearfix"></div>				
 						
 				</div>
 			</div><!--/row-->
@@ -126,7 +118,7 @@
 	<!-- start: JavaScript-->
 	<!--[if !IE]>-->
 
-			<script src="<c:url value="resources/assets/js/jquery-2.1.0.min.js" />" ></script>
+			<script src="resources/assets/js/jquery-2.1.0.min.js" ></script>
 
 	<!--<![endif]-->
 
@@ -139,7 +131,7 @@
 	<!--[if !IE]>-->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.1.0.min.js'>"+"<"+"/script>");
+			window.jQuery || document.write("<script src='<c:url value='resources/assets/js/jquery-2.1.0.min.js' />' >"+"<"+"/script>");
 		</script>
 
 	<!--<![endif]-->
@@ -151,7 +143,7 @@
 		</script>
 		
 	<![endif]-->
-	<script src="<c:url value="resources/assets/js/jquery-migrate-1.2.1.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/jquery-migrate-1.2.1.min.js" />" ></script>
 	<script src="<c:url value="resources/assets/js/bootstrap.min.js" />" ></script>
 	
 		
@@ -161,13 +153,12 @@
 	<script src="<c:url value="resources/assets/js/jquery.icheck.min.js" />" ></script>
 	
 	<!-- theme scripts -->
-	<script src="<c:url value="resources/assets/js/custom.min.js" />"></script>
+	<script src="<c:url value="resources/assets/js/custom.min.js" />" ></script>
 	<script src="<c:url value="resources/assets/js/core.min.js" />" ></script>
 	
 	<!-- inline scripts related to this page -->
-	<script src="<c:url value="resources/assets/js/pages/login.js" />"></script>
+	<script src="<c:url value="resources/assets/js/pages/login.js" />" ></script>
 	
 	<!-- end: JavaScript-->
 	
-
 </body>

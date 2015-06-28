@@ -23,7 +23,8 @@
 	<beans:bean class="com.m.object.Venta" name="Venta"></beans:bean>
 	<beans:bean class="com.m.fachade.FCategoria" name="FCategoria"></beans:bean>
 	<beans:bean class="com.m.object.Categoria" name="Categoria"></beans:bean>
-
+	
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 <!-- 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
 <!-- 		<beans:property name="prefix" value="/WEB-INF/views/" /> -->
