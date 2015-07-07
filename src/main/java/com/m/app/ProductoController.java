@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.m.fachade.FProducto;
 import com.m.fachade.FVenta;
@@ -36,9 +37,9 @@ public class ProductoController {
 		return "agregar";
 	}
 	
-	@RequestMapping(value="/venta", method = RequestMethod.POST)
-	public String vender(Venta venta) {
-		this.venta.vender(venta);
+	@RequestMapping(value="/venderproducto", method = RequestMethod.POST)
+	public String vender(@RequestParam("id") String id, @RequestParam String precio) {
+		this.venta.vender(id, precio);
 		return "productos";
 	}
 	

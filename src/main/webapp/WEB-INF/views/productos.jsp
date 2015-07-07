@@ -40,9 +40,9 @@
 							<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-lg-6"><div id="DataTables_Table_0_length" class="dataTables_length"><label><select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label></div></div><div class="col-lg-6"><div class="dataTables_filter" id="DataTables_Table_0_filter"><label>Search: <input type="text" aria-controls="DataTables_Table_0"></label></div></div></div><table class="table table-striped table-bordered bootstrap-datatable datatable dataTable" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
 							  <thead>
 								  <tr role="row">
+								  	<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 143px;">Id</th>
 								  	<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending" style="width: 343px;">Producto</th>
-								  	<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 244px;">Vencimiento</th>
-								  	<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 143px;">Role</th>
+								  	<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 244px;">Vencimiento</th>								  	
 								  	<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 129px;">Estado</th>
 								  	<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 277px;">Acciones</th></tr>
 							  </thead>   
@@ -52,18 +52,14 @@
 						  	<c:forEach var="producto" items="${productos}" >
 						  
 						  <tr class="odd">
-						  	
-						  		
-						  	
-						  	
+									<td class=" ">${producto.id}</td>
 									<td class=" sorting_1">${producto.categoria.nombre}</td>
-									<td class=" ">${producto.vencimiento}</td>
-									<td class=" ">Staff</td>
+									<td class=" ">${producto.vencimiento}</td>									
 									<td class=" ">
 										<span class="label label-success">Active</span>
 									</td>
 									<td class=" ">
-										<a class="btn btn-success" href="table.html#">
+										<a class="btn btn-success vender" data-id="${producto.id}" href="javacript:void(0)">
 											<i class="fa fa-search-plus "></i>                                            
 										</a>
 										<a class="btn btn-info" href="table.html#">
@@ -82,3 +78,66 @@
 				</div><!--/col-->
 			
 			</div>
+			
+			<div style="display:none" id="vender_modal">
+		<div class="row">
+				<div class="col-lg-12">
+					<div class="box">
+						<div class="box-header">
+							<h2><i class="fa fa-edit"></i>Form Elements</h2>
+							<div class="box-icon">
+								<a href="form-elements.html#" class="btn-setting"><i class="fa fa-wrench"></i></a>
+								<a href="form-elements.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+								<a href="form-elements.html#" class="btn-close"><i class="fa fa-times"></i></a>
+							</div>
+						</div>
+						<div class="box-content">
+							<form role="form">	
+								<input type="hidden" id="id_producto" value="" />
+										<div class="form-group">
+									<label class="control-label" for="appendedPrependedInput">Append and prepend</label>
+									<div class="controls">
+									  <div class="input-prepend input-group">
+										<span class="input-group-addon">$</span>
+										<input id="precio_producto" class="form-control" size="16" type="text"><span class="input-group-addon">.00</span>
+									  </div>
+									</div>
+								  </div>
+								  <div class="form-actions">
+									<a href="javascript:void(0)" id="btnAceptar" class="btn btn-primary">Aceptar</a>
+									<input type="button" id="btnCancelar" class="btn">Cancelar</input>
+								  </div>
+							</form>   
+
+						</div>
+					</div>
+				</div><!--/col-->
+
+			</div>
+			
+
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(function() {
+				$(".vender").bind('click', function(){
+					$("#vender_modal").show();
+					var id_producto = $(this).data("id");
+					$("id_producto").val(id_producto);
+				});
+				
+				$("#btnAceptar").bind('click', function() {
+					var id = $("id_producto").val();
+					var precio = $("precio_producto").val();
+					$.post("/venderproducto", {id: id , precio: precio}, function(response) {
+						
+					})
+				});
+				
+				$("#btnCancelar").bind('click', function() {
+				
+				})
+			})
+		
+		</script>
